@@ -26,18 +26,22 @@ const Service = () => {
         }
     ]
     return (
-        <div className='mt-16 mb-16'>
-            <h2 className='text-center text-secondary'>OUR SERVICES</h2>
-            <h2 className='text-center text-2xl'>Services We Provide</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-12 mt-8'>
-                {/* <Services img={fluoride} title="Fluoride Treatment"></Services>
-                <Services img={cavity} title="Cavity Filling"></Services>
-                <Services img={whitening} title="Teeth Whitening"></Services> */}
-                {
-                    services.map(service => <Services key={service._id} service={service}></Services>)
-                }
-            </div>
+        <div className='my-28'>
+        <div className='text-center'>
+            <h3 className='text-primary  text-xl font-bold uppercase'>Our Services</h3>
+            <h2 className='text-4xl'>Services We Provide</h2>
         </div>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+            {
+                services.map(service =><Services
+                    key={service._id}
+                    service={service}
+                ></Services>)
+            }
+        </div>
+        
+    </div>
+
     );
 };
 
