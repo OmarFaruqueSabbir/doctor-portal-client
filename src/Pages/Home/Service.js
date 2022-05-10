@@ -19,7 +19,7 @@ const Service = () => {
             img: cavity
         },
         {
-            _id:1,
+            _id:3,
             name: "Teeth Whitening",
             description: '',
             img: whitening

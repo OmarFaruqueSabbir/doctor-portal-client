@@ -14,7 +14,7 @@ const Appointment = () => {
                 <p className='text-white'>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo asperiores quidem delectus at ex, iste est voluptatibus eum suscipit maiores nesciunt, tenetur nemo! Ea suscipit quae, repudiandae vel ullam dignissimos expedita libero nostrum odit repellat cum. Esse vel molestiae exercitationem.
                 </p>
-                <button class="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary">Get Started</button>
+                <button className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary">Get Started</button>
             </div>
         </section>
     );
