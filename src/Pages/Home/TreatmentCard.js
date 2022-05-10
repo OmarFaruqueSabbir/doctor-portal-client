@@ -3,7 +3,7 @@ import treatment from "../../assets/images/treatment1.png"
 
 const TreatmentCard = () => {
     return (
-        <div class="card lg:card-side bg-base-100 shadow-xl lg:px-20">
+        <div class="card lg:card-side bg-base-100 shadow-xl lg:px-20 mb-14">
             <figure><img src={treatment} alt="Album" /></figure>
             <div class="card-body lg:w-2/3 lg:pt-20">
                 <h2 class="card-title text-4xl">Exceptional Dental <br /> Care,
