@@ -7,6 +7,8 @@ import LogIn from './Pages/Login/LogIn';
 import Register from './Pages/Login/Register';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Navbar from './Pages/Shared/Navbar/Navbar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
         </RequireAuth>
         } />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
