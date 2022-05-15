@@ -7,14 +7,25 @@ const MyAppointment = () => {
     const [user] = useAuthState(auth);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/bookings?patient=${user.email}`)
-                .then(res => res.json())
-                .then(data => setAppointments(data))
+            fetch(`http://localhost:5000/bookings?patient=${user.email}`,{
+                method: 'GET',
+                headers:{
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    console.log('res',res)
+
+                    return res.json()
+                })
+                .then(data => {
+                    setAppointments(data)
+                });
         }
     }, [user])
     return (
         <div>
-            <h2>My Appointments: {appointments.length} </h2>
+            <h2>My Appointments: {appointments?.length} </h2>
 
             <div class="overflow-x-auto">
                 <table class="table w-full">
