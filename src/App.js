@@ -13,6 +13,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyAppointment from './Pages/Dashboard/MyAppointment';
 import Review from './Pages/Home/Review';
 import MyReview from './Pages/Dashboard/MyReview';
+import Users from './Pages/Dashboard/Users';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/dashboard' element={<RequireAuth> <Dashboard /> </RequireAuth>}>
           <Route index element={<MyAppointment></MyAppointment>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
+          <Route path="users" element={<Users />}></Route>
         </Route>
       </Routes>
       <ToastContainer />
