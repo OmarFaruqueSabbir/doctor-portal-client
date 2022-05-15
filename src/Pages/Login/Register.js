@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import { async } from '@firebase/util';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
     const [
@@ -19,6 +20,8 @@ const Register = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+    const [token] = useToken(user || user1)
+
     const navigate = useNavigate();
 
     let signInError;
@@ -31,16 +34,20 @@ const Register = () => {
         signInError = <p className='text-red-500'>{error?.message || error1?.message || error2?.message}</p>
     }
 
-    if (user || user1) {
-        console.log(user)
+    if (token) {
+        navigate('/appointment')
     }
+    // if (user || user1) {
+    //     console.log(user || user1)
+    //     //navigate('/appointment')
+    // }
 
     const onSubmit = async data => {
         // console.log(data);
         createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name });
         console.log('update done');
-        navigate('/appointment')
+
     }
     return (
         <div className='flex justify-center items-center h-screen'>
