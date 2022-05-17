@@ -10,7 +10,7 @@ const MyAppointment = () => {
     const navigate = useNavigate()
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/bookings?patient=${user.email}`,{
+            fetch(`https://secret-fortress-03147.herokuapp.com/bookings?patient=${user.email}`,{
                 method: 'GET',
                 headers:{
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
